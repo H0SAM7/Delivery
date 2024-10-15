@@ -1,3 +1,4 @@
+import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/splash/views/widgets/title_splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-      //  Image.asset(AssetsHelper.logo),
-        AnimatedTitleSplash(slidingAnimation: slidingAnimation),
+       Image.asset(Assets.imagesLogo),
+      //  AnimatedTitleSplash(slidingAnimation: slidingAnimation),
       ],
     );
   }

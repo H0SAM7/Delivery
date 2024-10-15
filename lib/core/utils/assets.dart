@@ -44,7 +44,7 @@ class Assets {
 
   static const String iconsPlus = "assets/icons/Plus.png";
 
-  static const String iconsPolygon1 = "assets/icons/Polygon 1.png";
+  static const String iconsPolygon1 = "assets/icons/Polygon1.png";
 
   static const String iconsQuestion = "assets/icons/Question.png";
 
@@ -60,7 +60,7 @@ class Assets {
 
   static const String iconsTag = "assets/icons/Tag.png";
 
-  static const String iconsUnderArrow = "assets/icons/Under Arrow.png";
+  static const String iconsUnderArrow = "assets/icons/UnderArrow.png";
 
   static const String iconsUser = "assets/icons/User.png";
 
@@ -69,5 +69,7 @@ class Assets {
   static const String iconsVolume1 = "assets/icons/volume-1.png";
 
   static const String iconsWatch = "assets/icons/Watch.png";
+
+  static const String imagesLogo = "assets/images/Logo.png";
 }
 
