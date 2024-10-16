@@ -22,6 +22,8 @@ class Assets {
 
   static const String iconsFilter = "assets/icons/Filter.png";
 
+  static const String iconsGoogle = "assets/icons/google.png";
+
   static const String iconsGroup = "assets/icons/Group.png";
 
   static const String iconsHeart = "assets/icons/heart.png";
@@ -70,6 +72,10 @@ class Assets {
 
   static const String iconsWatch = "assets/icons/Watch.png";
 
+  static const String imagesBk = "assets/images/bk.png";
+
   static const String imagesLogo = "assets/images/Logo.png";
+
+  static const String imagesTstContainer = "assets/images/tstContainer.png";
 }
 

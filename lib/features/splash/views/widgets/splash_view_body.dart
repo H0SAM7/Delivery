@@ -1,4 +1,5 @@
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/splash/views/onboarding_view.dart';
 import 'package:delivery/features/splash/views/widgets/title_splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
        Image.asset(Assets.imagesLogo),
-      //  AnimatedTitleSplash(slidingAnimation: slidingAnimation),
+   AnimatedTitleSplash(slidingAnimation: slidingAnimation),
       ],
     );
   }
@@ -58,6 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         //     transition: Transition.fade    ,
         //     duration  : kTranstionDuration),
         // GoRouter.of(context).push(AppRoutes.kHomeView);
+        Navigator.pushReplacementNamed(context, OnboardingView.id);
       },
     );
   }
