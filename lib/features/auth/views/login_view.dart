@@ -99,7 +99,7 @@ class _LoginViewState extends State<LoginView> {
                     const SizedBox(
                       height: 50,
                     ),
-                    CustomAuthButton(
+                    CustomSendButton(
                       label: 'Login',
                       onTap: () async {
                         if (formKey.currentState!.validate()) {
@@ -138,7 +138,9 @@ class _LoginViewState extends State<LoginView> {
                     const SizedBox(
                       height: 24,
                     ),
-                    const SocialAuth(),
+                    const SocialAuth(
+                      
+                    ),
                   ],
                 ),
               ),

@@ -56,7 +56,7 @@ class _CustomTextFromState extends State<CustomTextFrom> {
               ? IconButton(
                   icon: Icon(
                     _isObscure ? Icons.visibility : Icons.visibility_off,
-              //      color: mainColor,
+                    color: orangeColor,
                   ),
                   onPressed: () {
                     setState(() {

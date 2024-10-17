@@ -1,8 +1,8 @@
 import 'package:delivery/constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomAuthButton extends StatelessWidget {
-  const CustomAuthButton({
+class CustomSendButton extends StatelessWidget {
+  const CustomSendButton({
     super.key,
     this.onTap,
     required this.label,

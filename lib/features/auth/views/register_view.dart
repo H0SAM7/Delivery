@@ -121,7 +121,7 @@ class _RegisterViewState extends State<RegisterView> {
                         Navigator.pushNamed(context, LoginView.id);
                       },
                     ),
-                    CustomAuthButton(
+                    CustomSendButton(
                       label: 'Sign Up',
                       onTap: () async {
                         if (formKey.currentState!.validate()) {
