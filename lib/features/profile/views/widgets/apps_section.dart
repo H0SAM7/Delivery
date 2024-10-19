@@ -1,5 +1,6 @@
-
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/payment/views/pyment_view.dart';
+import 'package:delivery/features/profile/views/sections/cart_view.dart';
 import 'package:delivery/features/profile/views/widgets/item_setting.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ class AppSections extends StatelessWidget {
         ItemSetting(
           leading: Image.asset(Assets.iconsCartIcon),
           title: 'Cart',
+          onTap: () {
+            Navigator.pushNamed(context, CartView.id);
+          },
         ),
         ItemSetting(
           leading: Image.asset(Assets.iconsFavoIcon),
@@ -25,6 +29,10 @@ class AppSections extends StatelessWidget {
         ItemSetting(
           leading: Image.asset(Assets.iconsPaymentIcon),
           title: 'Payment',
+          onTap: () {
+            
+            Navigator.pushNamed(context, PymentView.id);
+          },
         ),
       ],
     );

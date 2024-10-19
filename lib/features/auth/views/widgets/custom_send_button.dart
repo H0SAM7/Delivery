@@ -5,10 +5,13 @@ class CustomSendButton extends StatelessWidget {
   const CustomSendButton({
     super.key,
     this.onTap,
-    required this.label,
+    required this.label, this.width, this.color, this.txtcolor,
   });
   final void Function()? onTap;
   final String label;
+  final double? width;
+  final Color? color;
+  final Color? txtcolor;
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +19,18 @@ class CustomSendButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width: 300,
+        width:width??300,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
+            border:Border.all(color: orangeColor),
           // gradient: LinearGradient(colors: mixColors),
-          color: orangeColor
+          color:color?? orangeColor
             ),
         child: Center(
           child: Text(
             label,
-            style: const TextStyle(
-              color: Colors.white,
+            style:  TextStyle(
+              color: txtcolor?? Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -70,6 +70,8 @@ class Assets {
 
   static const String iconsMore = "assets/icons/More.png";
 
+  static const String iconsNomastercard = "assets/icons/Nomastercard.png";
+
   static const String iconsNotifiIcon = "assets/icons/notifiIcon.png";
 
   static const String iconsPaymentIcon = "assets/icons/paymentIcon.png";
@@ -85,6 +87,8 @@ class Assets {
   static const String iconsProfile = "assets/icons/profile.png";
 
   static const String iconsQuestion = "assets/icons/Question.png";
+
+  static const String iconsRemoveIcon = "assets/icons/RemoveIcon.png";
 
   static const String iconsReviewsIcon = "assets/icons/reviewsIcon.png";
 
@@ -103,6 +107,8 @@ class Assets {
   static const String iconsStar = "assets/icons/Star.png";
 
   static const String iconsTag = "assets/icons/Tag.png";
+
+  static const String iconsTracking = "assets/icons/tracking.png";
 
   static const String iconsUnderArrow = "assets/icons/UnderArrow.png";
 

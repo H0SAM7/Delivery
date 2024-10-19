@@ -20,9 +20,15 @@ class ProfileView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomAppBar(
-              title: 'Profile',
-              widget: Image.asset(Assets.iconsMore),
+            Padding(
+              padding: const EdgeInsets.only(top: 30.0,left: 20,right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Profile'),
+                  Image.asset(Assets.iconsMore),
+                ],
+              ),
             ),
             UserDetailsSection(),
             SettingContainer(
@@ -35,10 +41,10 @@ class ProfileView extends StatelessWidget {
               child: SettingsSection(),
             ),
             SettingContainer(
-              child:  ItemSetting(
-          leading: Image.asset(Assets.iconsLogoutIcon),
-          title: 'Log out',
-        ),
+              child: ItemSetting(
+                leading: Image.asset(Assets.iconsLogoutIcon),
+                title: 'Log out',
+              ),
             ),
           ],
         ),
