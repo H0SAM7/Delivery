@@ -7,6 +7,7 @@ import 'package:delivery/features/home/views/product_details_view.dart';
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/orders/views/track_order_view.dart';
 import 'package:delivery/features/payment/views/add_new_card_view.dart';
+import 'package:delivery/features/payment/views/payment_done_view.dart';
 import 'package:delivery/features/payment/views/pyment_view.dart';
 import 'package:delivery/features/profile/views/profile_view.dart';
 import 'package:delivery/features/profile/views/sections/add_new_address_view.dart';
@@ -23,7 +24,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppRoutes {
   //     BottomNavigator
-  static String? initialRoute = AddNewCard.id;
+  static String? initialRoute = BottomNavigator.id;
   static Map<String, Widget Function(BuildContext)> routes = {
     SplashView.id: (context) => const SplashView(),
     OnboardingView.id: (context) => const OnboardingView(),
@@ -46,5 +47,7 @@ abstract class AppRoutes {
     OrdersView.id: (context) => const OrdersView(),
     PymentView.id: (context) => const PymentView(),
     AddNewCard.id: (context) => const AddNewCard(),
+        PaymentDoneView.id: (context) => const PaymentDoneView(),
+
   };
 }

@@ -22,6 +22,8 @@ class Assets {
 
   static const String iconsChevronRight = "assets/icons/chevron-right.png";
 
+  static const String iconsCredit = "assets/icons/credit.png";
+
   static const String iconsCreditCard = "assets/icons/credit-card.png";
 
   static const String iconsCross = "assets/icons/Cross.png";
