@@ -1,4 +1,3 @@
-
 import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
 import 'package:delivery/features/auth/views/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class PaymentBottomSheetView extends StatelessWidget {
       padding:
           EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: const Column(
-            mainAxisSize: MainAxisSize.min, // Ensures the Column wraps its content
+        mainAxisSize: MainAxisSize.min, // Ensures the Column wraps its content
 
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +30,7 @@ class PaymentBottomSheetView extends StatelessWidget {
             height: 20,
           ),
           Center(child: CustomSendButton(label: 'Order Now')),
-            SizedBox(
+          SizedBox(
             height: 30,
           ),
         ],

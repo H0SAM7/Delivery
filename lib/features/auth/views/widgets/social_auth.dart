@@ -1,4 +1,3 @@
-
 import 'package:delivery/bottom_navigator_bar.dart';
 import 'package:delivery/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -17,15 +16,13 @@ class SocialAuth extends StatelessWidget {
           icon: Icons.facebook,
           color: Color(0xFF3b5998),
           onPressed: () {
-                                      Navigator.pushNamed(context, BottomNavigator.id);
-
+            Navigator.pushNamed(context, BottomNavigator.id);
           },
         ),
         const SizedBox(width: 20),
         GestureDetector(
           onTap: () {
-                                                  Navigator.pushNamed(context, BottomNavigator.id);
-
+            Navigator.pushNamed(context, BottomNavigator.id);
           },
           child: CircleAvatar(
             radius: 30,

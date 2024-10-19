@@ -48,16 +48,15 @@ class HomeView extends StatelessWidget {
   }
 }
 
-
 class BrandListView extends StatelessWidget {
   const BrandListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context,index){
-      return BrandItem();
-    });
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return BrandItem();
+        });
   }
 }

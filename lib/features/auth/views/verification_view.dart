@@ -13,7 +13,7 @@ class VerificationView extends StatelessWidget {
         children: [
           //    Expanded(child: Image.asset(Assets.imagesVerification)),
           //  SvgPicture.asset(Assets.imagesVerifiedCheck),
-         // Expanded(child: Image.asset(Assets.imagesVerification)),
+          // Expanded(child: Image.asset(Assets.imagesVerification)),
           const SizedBox(
             height: 50,
           ),
@@ -35,7 +35,9 @@ class VerificationView extends StatelessWidget {
               //         : RegisterView.id);
             },
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
         ],
       ),
     );

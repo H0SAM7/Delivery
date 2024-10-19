@@ -22,15 +22,14 @@ abstract class AppStyles {
     );
   }
 
-
   static TextStyle style24(BuildContext context) {
     return TextStyle(
       //   color: blueColor,
       fontSize: getResponsiveSize(context, fontSize: 24),
-    fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w600,
     );
   }
-  
+
   static const TextStyle style25 = TextStyle(
     color: Colors.black,
     fontSize: 25,
@@ -38,14 +37,12 @@ abstract class AppStyles {
     height: 0,
   );
 
- 
   static const TextStyle styleBold18 = TextStyle(
     color: Colors.black,
     fontSize: 18,
     fontWeight: FontWeight.w600,
     height: 0,
   );
- 
 
   static TextStyle style20 = TextStyle(
     color: Colors.black.withOpacity(0.800000011920929),

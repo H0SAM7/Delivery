@@ -62,7 +62,7 @@ class PersonalInfoSection extends StatelessWidget {
             Assets.iconsEmailIcon,
           ),
         ),
-         CustomListTile(
+        CustomListTile(
           title: 'Phone Number',
           subtitle: '01098894833',
           leading: Image.asset(

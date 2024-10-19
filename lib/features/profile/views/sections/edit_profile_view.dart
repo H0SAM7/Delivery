@@ -22,24 +22,27 @@ class EditProfileView extends StatelessWidget {
                   radius: 45,
                   backgroundColor: Colors.orange,
                   child: Image.asset(Assets.iconsEditprofile)),
-               const SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               const CustomTextFrom(label: 'Full Name', hint: 'Hosam Adel'),
               const SizedBox(
                 height: 20,
               ),
-               const CustomTextFrom(label: 'Email', hint: 'hosam@gmail.com'),
-                const SizedBox(
+              const CustomTextFrom(label: 'Email', hint: 'hosam@gmail.com'),
+              const SizedBox(
                 height: 20,
               ),
-               const CustomTextFrom(label: 'Phone Number', hint: '01098894833'),
-               const SizedBox(
+              const CustomTextFrom(label: 'Phone Number', hint: '01098894833'),
+              const SizedBox(
                 height: 30,
               ),
-              CustomSendButton(label: 'Save',onTap: (){
-                Navigator.pop(context);
-              },)
+              CustomSendButton(
+                label: 'Save',
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              )
             ],
           ),
         ),
@@ -47,4 +50,3 @@ class EditProfileView extends StatelessWidget {
     );
   }
 }
-

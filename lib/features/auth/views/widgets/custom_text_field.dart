@@ -43,11 +43,11 @@ class _CustomTextFromState extends State<CustomTextFrom> {
         decoration: InputDecoration(
           label: Text(
             widget.label,
-           // style: TextStyle(color: newColoR2),
+            // style: TextStyle(color: newColoR2),
           ),
           hintText: widget.hint,
           border: OutlineInputBorder(
-         //   borderSide: BorderSide(color: newColoR2),
+            //   borderSide: BorderSide(color: newColoR2),
             borderRadius: const BorderRadius.all(Radius.circular(16)),
           ),
           enabledBorder: outlineInputBorder,
@@ -66,7 +66,7 @@ class _CustomTextFromState extends State<CustomTextFrom> {
                 )
               : null,
           hintStyle: const TextStyle(
-         //   color: Color.fromARGB(255, 154, 193, 193),
+            //   color: Color.fromARGB(255, 154, 193, 193),
             fontFamily: 'Inter',
           ),
         ),
@@ -76,6 +76,6 @@ class _CustomTextFromState extends State<CustomTextFrom> {
 }
 
 final outlineInputBorder = OutlineInputBorder(
- borderSide: BorderSide(color: orangeColor),
+  borderSide: BorderSide(color: orangeColor),
   borderRadius: const BorderRadius.all(Radius.circular(16)),
 );

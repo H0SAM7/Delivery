@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../brand_details_view.dart';
@@ -12,7 +11,7 @@ class CategroyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, BrandDetailsView.id);
       },
       child: Container(

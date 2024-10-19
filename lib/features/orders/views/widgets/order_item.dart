@@ -1,4 +1,3 @@
-
 import 'package:delivery/constants.dart';
 import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,9 @@ class OrderItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListTile(
             leading: Container(
               width: 60,

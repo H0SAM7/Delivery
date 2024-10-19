@@ -1,12 +1,11 @@
-
-import 'package:delivery/features/payment/views/widgets/custom_check_icon.dart';
-import 'package:delivery/features/payment/views/widgets/custom_dashed_line.dart';
-import 'package:delivery/features/payment/views/widgets/thank_you_card.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/custom_check_icon.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/custom_dashed_line.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/thank_you_card.dart';
 import 'package:flutter/material.dart';
 
 class PaymentDoneView extends StatelessWidget {
   const PaymentDoneView({super.key});
-static String id='PaymentDoneView';
+  static String id = 'PaymentDoneView';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

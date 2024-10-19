@@ -5,7 +5,10 @@ class CustomSendButton extends StatelessWidget {
   const CustomSendButton({
     super.key,
     this.onTap,
-    required this.label, this.width, this.color, this.txtcolor,
+    required this.label,
+    this.width,
+    this.color,
+    this.txtcolor,
   });
   final void Function()? onTap;
   final String label;
@@ -19,18 +22,17 @@ class CustomSendButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width:width??300,
+        width: width ?? 300,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border:Border.all(color: orangeColor),
-          // gradient: LinearGradient(colors: mixColors),
-          color:color?? orangeColor
-            ),
+            border: Border.all(color: orangeColor),
+            // gradient: LinearGradient(colors: mixColors),
+            color: color ?? orangeColor),
         child: Center(
           child: Text(
             label,
-            style:  TextStyle(
-              color: txtcolor?? Colors.white,
+            style: TextStyle(
+              color: txtcolor ?? Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),

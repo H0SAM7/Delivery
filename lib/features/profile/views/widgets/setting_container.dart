@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class SettingContainer extends StatelessWidget {
   const SettingContainer({
-    super.key, this.child,
+    super.key,
+    this.child,
   });
-final Widget? child;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return Container(

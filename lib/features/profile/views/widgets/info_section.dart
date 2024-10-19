@@ -1,4 +1,3 @@
-
 import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/profile/views/sections/address_view.dart';
 import 'package:delivery/features/profile/views/sections/personal_info_view.dart';
@@ -17,22 +16,18 @@ class InfoSection extends StatelessWidget {
         ItemSetting(
           leading: Image.asset(Assets.iconsProfile),
           title: 'Personal Info',
-          onTap: (){
-                        Navigator.pushNamed(context, PersonalInfoView.id);
-
+          onTap: () {
+            Navigator.pushNamed(context, PersonalInfoView.id);
           },
         ),
         ItemSetting(
           leading: Image.asset(Assets.iconsAddress),
           title: 'Address',
-          onTap:(){
-                        Navigator.pushNamed(context, AddressView.id);
-
-          } ,
+          onTap: () {
+            Navigator.pushNamed(context, AddressView.id);
+          },
         ),
       ],
     );
   }
 }
-
-

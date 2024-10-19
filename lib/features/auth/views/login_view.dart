@@ -77,7 +77,6 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     CustomTextFrom(
                       hint: "enter  your password",
-
                       label: 'Password',
                       isPasswordField: true,
                       onChanged: (value) {
@@ -113,16 +112,17 @@ class _LoginViewState extends State<LoginView> {
                       },
                     ),
 
-                     Row(
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         HaveAccWidget(
-                            title: 'Don’t have an account? ',
-                            action: 'Sign Up',
-                            onPressed: () {
-                               Navigator.pushNamed(context, RegisterView.id);
-                            },),
+                          title: 'Don’t have an account? ',
+                          action: 'Sign Up',
+                          onPressed: () {
+                            Navigator.pushNamed(context, RegisterView.id);
+                          },
+                        ),
                       ],
                     ),
                     const OrWidget(),
@@ -138,9 +138,7 @@ class _LoginViewState extends State<LoginView> {
                     const SizedBox(
                       height: 24,
                     ),
-                    const SocialAuth(
-                      
-                    ),
+                    const SocialAuth(),
                   ],
                 ),
               ),

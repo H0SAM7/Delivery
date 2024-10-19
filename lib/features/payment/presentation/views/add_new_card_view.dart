@@ -1,6 +1,6 @@
 import 'package:delivery/core/widgets/custom_app_bar.dart';
 import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
-import 'package:delivery/features/payment/views/widgets/custom_credit_card.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/custom_credit_card.dart';
 import 'package:flutter/material.dart';
 
 class AddNewCard extends StatefulWidget {
@@ -36,13 +36,9 @@ class _AddNewCardState extends State<AddNewCard> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      
-                    }
-                    else{
-                      autovalidateMode=AutovalidateMode.always;
-                      setState(() {
-                        
-                      });
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
                     }
                   },
                 ),

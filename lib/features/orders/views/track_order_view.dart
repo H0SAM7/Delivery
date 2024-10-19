@@ -14,15 +14,13 @@ class TrackOrderView extends StatelessWidget {
         children: [
           CustomAppBar(title: 'Tracking Order'),
           Expanded(
-            flex: 4,
+              flex: 4,
               child: Image.asset(
-            Assets.iconsTracking,
-            fit: BoxFit.fitWidth,
-          )),
+                Assets.iconsTracking,
+                fit: BoxFit.fitWidth,
+              )),
           const Spacer(),
-          Expanded(
-            flex: 4,
-            child: DeliveryTrackingSheet()),
+          Expanded(flex: 4, child: DeliveryTrackingSheet()),
         ],
       ),
     );
@@ -108,8 +106,10 @@ class DeliveryTrackingSheet extends StatelessWidget {
                         iconColor: Colors.grey,
                         isCompleted: false,
                       ),
-                      SizedBox(height: 20,),
-                          KabtinContact(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      KabtinContact(),
                     ],
                   )
                 ],
@@ -121,7 +121,6 @@ class DeliveryTrackingSheet extends StatelessWidget {
     );
   }
 }
-
 
 class KabtinContact extends StatelessWidget {
   const KabtinContact({
@@ -153,17 +152,18 @@ class KabtinContact extends StatelessWidget {
             iconSize: 30,
             padding: EdgeInsets.all(12),
             constraints: BoxConstraints(),
-           
           ),
           SizedBox(width: 10),
           IconButton(
-            icon: Icon(Icons.messenger,color: orangeColor,),
+            icon: Icon(
+              Icons.messenger,
+              color: orangeColor,
+            ),
             onPressed: () {},
             color: Colors.orangeAccent,
             iconSize: 30,
             padding: EdgeInsets.all(12),
             constraints: BoxConstraints(),
-           
           ),
         ],
       ),

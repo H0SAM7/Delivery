@@ -1,4 +1,3 @@
-
 import 'package:delivery/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -22,16 +21,15 @@ class CustomCartItem extends StatelessWidget {
         style: TextStyle(fontSize: 20),
       ),
       trailing: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
             onPressed: () {},
             icon: Image.asset(Assets.iconsRemoveIcon),
           ),
           FittedBox(
-          //  width: 30,
+            //  width: 30,
             child: Row(
-                  
               children: [
                 IconButton(
                   onPressed: () {},

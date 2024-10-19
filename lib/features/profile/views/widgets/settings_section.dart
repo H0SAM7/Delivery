@@ -1,4 +1,3 @@
-
 import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/profile/views/widgets/item_setting.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class SettingsSection extends StatelessWidget {
           leading: Image.asset(Assets.iconsReviewsIcon),
           title: 'User Reviews',
         ),
-   ItemSetting(
+        ItemSetting(
           leading: Image.asset(Assets.iconsSettingsIcon),
           title: 'Settings',
         ),

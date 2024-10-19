@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 class AuthHeader extends StatelessWidget {
   const AuthHeader({
-    super.key, required this.title, required this.subTitle,
+    super.key,
+    required this.title,
+    required this.subTitle,
   });
-final String title;
-final String subTitle;
+  final String title;
+  final String subTitle;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -19,8 +20,7 @@ final String subTitle;
         ),
         Text(
           subTitle,
-          style: TextStyle(
-              color: Colors.white.withOpacity(.5), fontSize: 14),
+          style: TextStyle(color: Colors.white.withOpacity(.5), fontSize: 14),
         )
       ],
     ));

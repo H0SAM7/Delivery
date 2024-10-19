@@ -18,8 +18,8 @@ class ProductDetailsView extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: Image.asset(Assets.iconsBack)),
-                     const Text('Details'),
- ],
+                const Text('Details'),
+              ],
             )
           ],
         ),

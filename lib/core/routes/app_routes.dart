@@ -6,9 +6,9 @@ import 'package:delivery/features/home/views/home_view.dart';
 import 'package:delivery/features/home/views/product_details_view.dart';
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/orders/views/track_order_view.dart';
-import 'package:delivery/features/payment/views/add_new_card_view.dart';
-import 'package:delivery/features/payment/views/payment_done_view.dart';
-import 'package:delivery/features/payment/views/pyment_view.dart';
+import 'package:delivery/features/payment/presentation/views/add_new_card_view.dart';
+import 'package:delivery/features/payment/presentation/views/payment_done_view.dart';
+import 'package:delivery/features/payment/presentation/views/pyment_view.dart';
 import 'package:delivery/features/profile/views/profile_view.dart';
 import 'package:delivery/features/profile/views/sections/add_new_address_view.dart';
 import 'package:delivery/features/profile/views/sections/address_view.dart';
@@ -47,7 +47,6 @@ abstract class AppRoutes {
     OrdersView.id: (context) => const OrdersView(),
     PymentView.id: (context) => const PymentView(),
     AddNewCard.id: (context) => const AddNewCard(),
-        PaymentDoneView.id: (context) => const PaymentDoneView(),
-
+    PaymentDoneView.id: (context) => const PaymentDoneView(),
   };
 }

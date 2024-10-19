@@ -19,9 +19,9 @@ class OrWidget extends StatelessWidget {
             width: 30,
             color: orangeColor,
           ),
-           Text(
+          Text(
             "OR",
-            style: TextStyle(color:orangeColor),
+            style: TextStyle(color: orangeColor),
           ),
           Container(
             height: 2,

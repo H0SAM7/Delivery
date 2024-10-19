@@ -1,4 +1,3 @@
-
 import 'package:delivery/constants.dart';
 import 'package:delivery/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +17,15 @@ class HaveAccWidget extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Row(
-
         children: [
           Text(
             title,
-         //   textAlign: TextAlign.center,
+            //   textAlign: TextAlign.center,
             style: TextStyle(color: Colors.black),
           ),
           Text(
             action,
-            style: TextStyle(color:orangeColor ),
+            style: TextStyle(color: orangeColor),
           ),
         ],
       ),

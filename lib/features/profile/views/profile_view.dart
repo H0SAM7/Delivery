@@ -21,7 +21,7 @@ class ProfileView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30.0,left: 20,right: 20),
+              padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

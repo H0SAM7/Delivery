@@ -1,4 +1,3 @@
-
 import 'package:delivery/features/home/views/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 

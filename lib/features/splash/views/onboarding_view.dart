@@ -1,9 +1,10 @@
 import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
 import 'package:flutter/material.dart';
+
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
-static String id='OnboardingView';
+  static String id = 'OnboardingView';
   @override
   // ignore: library_private_types_in_public_api
   _OnboardingViewState createState() => _OnboardingViewState();
@@ -83,12 +84,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                 backgroundColor: Colors.orange,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               ),
-              child: Text('NEXT',style:TextStyle(color:  Colors.white),),
+              child: Text(
+                'NEXT',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             SizedBox(height: 10),
             TextButton(
               onPressed: () {
-                // _pageController.jumpToPage(2); 
+                // _pageController.jumpToPage(2);
                 Navigator.pushNamed(context, RegisterView.id);
               },
               child: Text('Skip'),
@@ -106,7 +110,10 @@ class OnboardingPage extends StatelessWidget {
   final String description;
 
   const OnboardingPage(
-      {super.key, required this.image, required this.title, required this.description});
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +123,8 @@ class OnboardingPage extends StatelessWidget {
         Container(
           width: 200,
           height: 200,
-         // color: Colors.grey,
-          child:  Center(
+          // color: Colors.grey,
+          child: Center(
             child: Image.asset(image),
           ),
         ),

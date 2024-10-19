@@ -21,7 +21,9 @@ class NewOrderView extends StatelessWidget {
           CustomTextFrom(label: 'Your Address', hint: 'Your Address'),
           Spacer(),
           CustomSendButton(label: 'Contiue'),
-          SizedBox(height: 15,)
+          SizedBox(
+            height: 15,
+          )
         ],
       ),
     );

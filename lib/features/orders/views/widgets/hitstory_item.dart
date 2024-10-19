@@ -1,4 +1,3 @@
-
 import 'package:delivery/constants.dart';
 import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,9 @@ class HitstoryItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           ListTile(
             leading: Container(
               width: 60,
@@ -34,7 +35,7 @@ class HitstoryItem extends StatelessWidget {
                 label: 'Rate',
                 width: 140,
                 onTap: () {},
-                     color: Colors.white,
+                color: Colors.white,
                 txtcolor: orangeColor,
               ),
               const SizedBox(width: 16.0),
@@ -42,7 +43,6 @@ class HitstoryItem extends StatelessWidget {
                 label: 'Re-order',
                 width: 140,
                 onTap: () {},
-         
               ),
             ],
           ),

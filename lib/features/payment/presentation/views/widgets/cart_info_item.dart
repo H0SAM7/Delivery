@@ -11,13 +11,13 @@ class OrderInfoItem extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.center,
-         style: AppStyles.style18(context),
+          style: AppStyles.style18(context),
         ),
         const Spacer(),
         Text(
           value,
           textAlign: TextAlign.center,
-         style: AppStyles.style18(context),
+          style: AppStyles.style18(context),
         )
       ],
     );

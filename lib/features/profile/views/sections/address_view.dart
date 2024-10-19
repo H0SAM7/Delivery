@@ -22,22 +22,27 @@ class AddressView extends StatelessWidget {
                   leading: Image.asset(Assets.iconsHomeAddressIcon),
                   title: 'Home',
                   subtitle: 'Sohag - Egypt',
-                  trailing:    IconButton(
-                          icon: Image.asset(Assets.iconsDeleteicon),
-                          onPressed: () {}),
+                  trailing: IconButton(
+                      icon: Image.asset(Assets.iconsDeleteicon),
+                      onPressed: () {}),
                 ),
-               CustomListTile(
+                CustomListTile(
                   leading: Image.asset(Assets.iconsHomeAddressIcon),
                   title: 'Work',
                   subtitle: 'Sohag - Egypt',
-                  trailing:    IconButton(
-                          icon: Image.asset(Assets.iconsDeleteicon),
-                          onPressed: () {}),
+                  trailing: IconButton(
+                      icon: Image.asset(Assets.iconsDeleteicon),
+                      onPressed: () {}),
                 ),
-SizedBox(height: 60,),
-                CustomSendButton(label: 'Add new address',onTap: (){
-                  Navigator.pushNamed(context, AddNewAddressView.id);
-                },)
+                SizedBox(
+                  height: 60,
+                ),
+                CustomSendButton(
+                  label: 'Add new address',
+                  onTap: () {
+                    Navigator.pushNamed(context, AddNewAddressView.id);
+                  },
+                )
               ],
             ),
           )

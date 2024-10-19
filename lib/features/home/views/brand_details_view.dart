@@ -23,11 +23,10 @@ class BrandDetailsView extends StatelessWidget {
               'Popular Burgers',
               style: TextStyle(fontSize: 20),
             ),
-           Expanded(child: ProductListView())
+            Expanded(child: ProductListView())
           ],
         ),
       ),
     );
   }
 }
-

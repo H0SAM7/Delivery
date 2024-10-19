@@ -20,15 +20,14 @@ class OrdersView extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          
           title: Text('My Orders'),
           elevation: 0,
           backgroundColor: Colors.white,
-          bottom:  TabBar(
-            unselectedLabelStyle:const TextStyle(color: Color(0xffA5A7B9)),
-            labelColor:orangeColor,
-            indicatorColor:orangeColor,
-            dividerColor:orangeColor,
+          bottom: TabBar(
+            unselectedLabelStyle: const TextStyle(color: Color(0xffA5A7B9)),
+            labelColor: orangeColor,
+            indicatorColor: orangeColor,
+            dividerColor: orangeColor,
             tabs: <Widget>[
               Tab(
                 text: 'Ongoing',
@@ -49,6 +48,3 @@ class OrdersView extends StatelessWidget {
     );
   }
 }
-
-
-

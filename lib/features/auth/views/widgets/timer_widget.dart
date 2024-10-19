@@ -16,4 +16,3 @@ class TimerWidget extends StatelessWidget {
     );
   }
 }
-

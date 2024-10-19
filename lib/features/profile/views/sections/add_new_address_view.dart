@@ -24,10 +24,15 @@ class AddNewAddressView extends StatelessWidget {
             label: const Text('Location'),
             icon: const Icon(Icons.location_on),
           ),
-          const SizedBox(height: 40,),
-          CustomSendButton(label: 'Save location',onTap: (){
-            Navigator.pop(context);
-          },)
+          const SizedBox(
+            height: 40,
+          ),
+          CustomSendButton(
+            label: 'Save location',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )
         ],
       ),
     );

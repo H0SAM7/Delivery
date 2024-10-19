@@ -1,9 +1,7 @@
-
-import 'package:delivery/features/payment/views/widgets/card_info.dart';
-import 'package:delivery/features/payment/views/widgets/payment_info_item.dart';
-import 'package:delivery/features/payment/views/widgets/total_price_widget.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/card_info.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/payment_info_item.dart';
+import 'package:delivery/features/payment/presentation/views/widgets/total_price_widget.dart';
 import 'package:flutter/material.dart';
-
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({
@@ -27,12 +25,12 @@ class ThankYouCard extends StatelessWidget {
             const Text(
               'Thank you!',
               textAlign: TextAlign.center,
-             // style: Styles.style25,
+              // style: Styles.style25,
             ),
             Text(
               'Your transaction was successful',
               textAlign: TextAlign.center,
-            //  style: Styles.style20,
+              //  style: Styles.style20,
             ),
             const SizedBox(
               height: 42,
