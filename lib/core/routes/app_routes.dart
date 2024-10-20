@@ -20,11 +20,13 @@ import 'package:delivery/features/profile/views/sections/notifi_view.dart';
 import 'package:delivery/features/profile/views/sections/personal_info_view.dart';
 import 'package:delivery/features/splash/views/onboarding_view.dart';
 import 'package:delivery/features/splash/views/splash_view.dart';
+import 'package:delivery/features/temp/stripe_payment_test.dart';
+import 'package:delivery/features/temp/tesssst.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppRoutes {
   //     BottomNavigator
-  static String? initialRoute = BottomNavigator.id;
+  static String? initialRoute = Tesssst.id;
   static Map<String, Widget Function(BuildContext)> routes = {
     SplashView.id: (context) => const SplashView(),
     OnboardingView.id: (context) => const OnboardingView(),
@@ -48,5 +50,9 @@ abstract class AppRoutes {
     PymentView.id: (context) => const PymentView(),
     AddNewCard.id: (context) => const AddNewCard(),
     PaymentDoneView.id: (context) => const PaymentDoneView(),
+    StripeTest.id: (context) => const StripeTest(),
+
+    Tesssst.id: (context) => const Tesssst(),
+
   };
 }

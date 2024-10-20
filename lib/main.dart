@@ -1,8 +1,12 @@
 import 'package:delivery/core/routes/app_routes.dart';
+import 'package:delivery/keys/api_keys.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
+  Stripe.publishableKey = ApiKeys.stripePublishableKey;
+
   runApp(const DeliveryApp());
 }
 
