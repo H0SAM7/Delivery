@@ -1,3 +1,4 @@
+import 'package:delivery/core/styles/app_styles.dart';
 import 'package:delivery/features/home/presentation/views/widgets/resturant_item.dart';
 import 'package:delivery/features/home/presentation/views/widgets/categories_list_view.dart';
 import 'package:delivery/features/home/presentation/views/widgets/home_header.dart';
@@ -42,6 +43,8 @@ class HomeView extends StatelessWidget {
             ),
           ),
           CategoriesListView(),
+          Divider(indent: 40,thickness: .5,endIndent: 40,),
+          Text('Open Restaurants',style: AppStyles.style24(context),),
           Expanded(child: ResturentsListView())
         ],
       ),

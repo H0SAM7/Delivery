@@ -1,3 +1,5 @@
+import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/home/data/models/category_model.dart';
 import 'package:delivery/features/home/presentation/views/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +11,26 @@ class CategoriesListView extends StatefulWidget {
 }
 
 class _CategoriesListViewState extends State<CategoriesListView> {
-  final List<String> categories = ["All", "Foods", "Clothes", "Other"];
+  List<CategoryModel> categories = [
+    CategoryModel(
+      name: 'All',
+      image: Assets.imagesFire,
+    ),
+    CategoryModel(
+      name: 'Burger',
+      image: Assets.imagesBurger,
+    ),
+    CategoryModel(
+      name: 'Pizza',
+      image: Assets.imagesPizza,
+    ),
+       
+      CategoryModel(
+      name: 'Juices',
+      image: Assets.imagesJuices,
+    ),
+  ];
+//  final List<String> categories = ["All", "Foods", "Clothes", "Other"];
   // Add more categories here
   int selectedIndex = 0;
   // Tracks the selected category index
@@ -23,17 +44,14 @@ class _CategoriesListViewState extends State<CategoriesListView> {
           itemBuilder: (context, index) {
             bool isSelected =
                 selectedIndex == index; // Check if the category is selected
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index; // Update selected index on tap
-                    });
-                  },
-                  child: CategroyItem(
-                      category: categories[index], isSelected: isSelected)),
-            );
+            return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index; // Update selected index on tap
+                  });
+                },
+                child: CategroyItem(
+                   categoryModel: categories[index], isSelected: isSelected));
           }),
     );
   }
