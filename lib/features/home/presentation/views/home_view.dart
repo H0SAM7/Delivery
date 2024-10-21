@@ -43,12 +43,18 @@ class HomeView extends StatelessWidget {
             ),
           ),
           CategoriesListView(),
-          Divider(indent: 40,thickness: .5,endIndent: 40,),
-          Text('Open Restaurants',style: AppStyles.style24(context),),
+          Divider(
+            indent: 40,
+            thickness: .5,
+            endIndent: 40,
+          ),
+          Text(
+            'Open Restaurants',
+            style: AppStyles.style24(context),
+          ),
           Expanded(child: ResturentsListView())
         ],
       ),
     );
   }
 }
-

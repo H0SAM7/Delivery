@@ -24,8 +24,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
       name: 'Pizza',
       image: Assets.imagesPizza,
     ),
-       
-      CategoryModel(
+    CategoryModel(
       name: 'Juices',
       image: Assets.imagesJuices,
     ),
@@ -51,7 +50,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
                   });
                 },
                 child: CategroyItem(
-                   categoryModel: categories[index], isSelected: isSelected));
+                    categoryModel: categories[index], isSelected: isSelected));
           }),
     );
   }

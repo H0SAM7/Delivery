@@ -18,7 +18,9 @@ class AnimatedTitleSplash extends StatelessWidget {
             child: const Text(
               'Welcom',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 40, ),
+              style: TextStyle(
+                fontSize: 40,
+              ),
             ),
           );
         });

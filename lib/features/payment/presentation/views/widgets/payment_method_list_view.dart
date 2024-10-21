@@ -11,9 +11,8 @@ class PaymentMethodsListView extends StatefulWidget {
 
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> paymentMethodsItems = const [
-   Assets.iconsPaymentIcon,
-      Assets.iconsPaymentIcon,
-
+    Assets.iconsPaymentIcon,
+    Assets.iconsPaymentIcon,
   ];
 
   int activeIndex = 0;

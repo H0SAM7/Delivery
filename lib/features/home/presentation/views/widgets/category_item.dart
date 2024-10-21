@@ -1,9 +1,6 @@
 import 'package:delivery/core/styles/app_styles.dart';
-import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/home/data/models/category_model.dart';
 import 'package:flutter/material.dart';
-
-import '../brand_details_view.dart';
 
 class CategroyItem extends StatelessWidget {
   const CategroyItem(
@@ -14,12 +11,11 @@ class CategroyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, BrandDetailsView.id);
+        //  Navigator.pushNamed(context, BrandDetailsView.id);
       },
       child: Padding(
-       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
         child: Container(
-             
           decoration: BoxDecoration(
             color: isSelected ? Colors.orange[200] : Colors.grey[200],
             borderRadius: BorderRadius.circular(30.0),
@@ -36,7 +32,7 @@ class CategroyItem extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Row(
-               // mainAxisAlignment: MainAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.start,
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
@@ -53,18 +49,16 @@ class CategroyItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                const SizedBox(width: 32.0),
-                  Text(
-                    categoryModel.name,
-                    style:AppStyles.style18(context).copyWith(
-                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: isSelected
-                          ? Colors.black
-                          : Colors
-                              .grey[700], // Text color changes for selected category
-                    )
-                  ),
+                  const SizedBox(width: 32.0),
+                  Text(categoryModel.name,
+                      style: AppStyles.style18(context).copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: isSelected
+                            ? Colors.black
+                            : Colors.grey[
+                                700], // Text color changes for selected category
+                      )),
                 ],
               ),
             ),

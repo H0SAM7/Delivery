@@ -5,11 +5,11 @@ class RestaurantModel {
   final String time;
   final String rate;
 
-  RestaurantModel(
-      {required this.name,
-      required this.menu,
-      required this.image,
-      required this.time,
-      required this.rate, 
-      });
+  RestaurantModel({
+    required this.name,
+    required this.menu,
+    required this.image,
+    required this.time,
+    required this.rate,
+  });
 }

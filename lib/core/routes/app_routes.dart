@@ -3,6 +3,7 @@ import 'package:delivery/features/auth/views/login_view.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
 import 'package:delivery/features/home/presentation/views/brand_details_view.dart';
 import 'package:delivery/features/home/presentation/views/home_view.dart';
+import 'package:delivery/features/home/presentation/views/menu_items_view.dart';
 import 'package:delivery/features/home/presentation/views/product_details_view.dart';
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/orders/views/track_order_view.dart';
@@ -51,8 +52,8 @@ abstract class AppRoutes {
     AddNewCard.id: (context) => const AddNewCard(),
     PaymentDoneView.id: (context) => const PaymentDoneView(),
     StripeTest.id: (context) => const StripeTest(),
-
     Tesssst.id: (context) => const Tesssst(),
+        MenuItemsView.id: (context) => const MenuItemsView(),
 
   };
 }

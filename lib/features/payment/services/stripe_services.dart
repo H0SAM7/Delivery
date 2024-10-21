@@ -14,11 +14,13 @@ class StripeServices {
   String creatrCustomerIdUrl = 'https://api.stripe.com/v1/customers';
 
   Future createCustomer({required String email}) async {
-    await apiServices.post(body: {
-      'email': email,
-    }, url: creatrCustomerIdUrl, token: ApiKeys.stripeKey,
-          contentType: Headers.formUrlEncodedContentType,
-
+    await apiServices.post(
+      body: {
+        'email': email,
+      },
+      url: creatrCustomerIdUrl,
+      token: ApiKeys.stripeKey,
+      contentType: Headers.formUrlEncodedContentType,
     );
   }
 

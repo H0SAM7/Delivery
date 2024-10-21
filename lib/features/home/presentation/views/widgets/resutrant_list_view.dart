@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class ResturentsListView extends StatelessWidget {
   const ResturentsListView({super.key});
   static List<RestaurantModel> restaurants = [
-        RestaurantModel(
+    RestaurantModel(
       name: "The Mixer",
       menu: 'Juices - fruits',
       image: Assets.imagesMixer,
@@ -40,9 +40,7 @@ class ResturentsListView extends StatelessWidget {
       image: Assets.imagesBlbn,
       time: '10',
       rate: '4.9',
-      
     ),
-
   ];
   @override
   Widget build(BuildContext context) {
