@@ -1,6 +1,6 @@
 import 'package:delivery/constants.dart';
 import 'package:delivery/core/utils/assets.dart';
-import 'package:delivery/features/home/views/home_view.dart';
+import 'package:delivery/features/home/presentation/views/home_view.dart';
 import 'package:delivery/features/orders/views/new_order_view.dart';
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/profile/views/profile_view.dart';

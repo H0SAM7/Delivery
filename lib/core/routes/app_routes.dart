@@ -1,9 +1,9 @@
 import 'package:delivery/bottom_navigator_bar.dart';
 import 'package:delivery/features/auth/views/login_view.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
-import 'package:delivery/features/home/views/brand_details_view.dart';
-import 'package:delivery/features/home/views/home_view.dart';
-import 'package:delivery/features/home/views/product_details_view.dart';
+import 'package:delivery/features/home/presentation/views/brand_details_view.dart';
+import 'package:delivery/features/home/presentation/views/home_view.dart';
+import 'package:delivery/features/home/presentation/views/product_details_view.dart';
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/orders/views/track_order_view.dart';
 import 'package:delivery/features/payment/presentation/views/add_new_card_view.dart';
@@ -26,7 +26,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppRoutes {
   //     BottomNavigator
-  static String? initialRoute = Tesssst.id;
+  static String? initialRoute = BottomNavigator.id;
   static Map<String, Widget Function(BuildContext)> routes = {
     SplashView.id: (context) => const SplashView(),
     OnboardingView.id: (context) => const OnboardingView(),

@@ -1,6 +1,7 @@
-import 'package:delivery/features/home/views/widgets/brand_item.dart';
-import 'package:delivery/features/home/views/widgets/categories_list_view.dart';
-import 'package:delivery/features/home/views/widgets/home_header.dart';
+import 'package:delivery/features/home/presentation/views/widgets/resturant_item.dart';
+import 'package:delivery/features/home/presentation/views/widgets/categories_list_view.dart';
+import 'package:delivery/features/home/presentation/views/widgets/home_header.dart';
+import 'package:delivery/features/home/presentation/views/widgets/resutrant_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -41,22 +42,10 @@ class HomeView extends StatelessWidget {
             ),
           ),
           CategoriesListView(),
-          Expanded(child: BrandListView())
+          Expanded(child: ResturentsListView())
         ],
       ),
     );
   }
 }
 
-class BrandListView extends StatelessWidget {
-  const BrandListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return BrandItem();
-        });
-  }
-}

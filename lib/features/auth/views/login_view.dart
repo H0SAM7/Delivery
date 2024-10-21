@@ -31,8 +31,9 @@ class _LoginViewState extends State<LoginView> {
           CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
+            
             child: Container(
-              height: 220,
+              height: MediaQuery.sizeOf(context).height*.3,
               decoration: const BoxDecoration(
                   color: Color(0xff1E1E2E),
                   image: DecorationImage(
@@ -48,6 +49,7 @@ class _LoginViewState extends State<LoginView> {
             ),
           ),
           SliverFillRemaining(
+            hasScrollBody: false,
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors

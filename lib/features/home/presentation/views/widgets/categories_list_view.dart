@@ -1,4 +1,4 @@
-import 'package:delivery/features/home/views/widgets/category_item.dart';
+import 'package:delivery/features/home/presentation/views/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesListView extends StatefulWidget {
