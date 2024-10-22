@@ -5,15 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ResturantItem extends StatelessWidget {
-  const ResturantItem({super.key, required this.restaurantModel});
+  const ResturantItem({
+    super.key,
+    required this.restaurantModel,
+  });
   final RestaurantModel restaurantModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        await BlocProvider.of<MenuCubit>(context).getMenu();
+        await BlocProvider.of<MenuCubit>(context)
+            .getMenu(quary: restaurantModel.quary);
 
-        Navigator.pushNamed(context, MenuItemsView.id);
+        Navigator.pushNamed(context, MenuItemsView.id,arguments: restaurantModel);
       },
       child: Card(
         elevation: 4,

@@ -1,60 +1,50 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:delivery/core/styles/app_styles.dart';
-import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/core/widgets/custom_alert.dart';
+import 'package:delivery/core/widgets/custom_app_bar.dart';
+import 'package:delivery/core/widgets/custom_loading_indecator.dart';
+import 'package:delivery/features/home/data/models/restaurant_model.dart';
+import 'package:delivery/features/home/presentation/manager/menu_cubit/menu_cubit.dart';
 import 'package:delivery/features/home/presentation/views/widgets/menu_items_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class MenuItemsView extends StatelessWidget {
   const MenuItemsView({super.key});
   static String id = 'MenuItemsView';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(Assets.iconsBack),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  'Menu',
-                  style: AppStyles.style24(context),
-                ),
-              ],
-            ),
-            Expanded(child: MenuItemsListView()),
-          ],
-        ),
-      ),
-    );
-  }
-  
-}
+    final resturanModel =
+        ModalRoute.of(context)?.settings.arguments as RestaurantModel;
 
-class CustomImage extends StatelessWidget {
-  const CustomImage({
-    super.key,
-    required this.image,
-  });
-  final String image;
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: AspectRatio(
-        aspectRatio: 2,
-        child: CachedNetworkImage(
-          imageUrl: image,
-          fit: BoxFit.fill,
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+    return BlocListener<MenuCubit, MenuState>(
+      listener: (context, state) {
+        if (state is MenuLoading) {
+          const CustomLoadingIndicator();
+        }
+        else if(state is MenuFailure){
+              showCustomAlert(
+            context: context,
+            type: AlertType.error,
+            title: 'Error',
+            description: state.errMessage,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            actionTitle: 'Ok',
+          );
+        }
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              const CustomAppBar(title: 'Menu'),
+              Expanded(
+                  child: MenuItemsListView(
+                restaurantModel: resturanModel,
+              )),
+            ],
+          ),
         ),
       ),
     );

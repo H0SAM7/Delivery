@@ -6,19 +6,14 @@ import 'package:flutter/material.dart';
 class ResturentsListView extends StatelessWidget {
   const ResturentsListView({super.key});
   static List<RestaurantModel> restaurants = [
-    RestaurantModel(
-      name: "The Mixer",
-      menu: 'Juices - fruits',
-      image: Assets.imagesMixer,
-      time: '10',
-      rate: '4.9',
-    ),
+   
     RestaurantModel(
       name: "Mandoz Food Station",
       menu: 'Chiken - Beaf - Pizza - Shaworma - pasta',
       image: Assets.imagesMandoz,
       time: '25',
       rate: '4.9',
+        quary: 'pizza',
     ),
     RestaurantModel(
       name: "Zack's Fired Cheken",
@@ -26,6 +21,7 @@ class ResturentsListView extends StatelessWidget {
       image: Assets.imagesZacks,
       time: '20',
       rate: '4.8',
+        quary: 'Burger',
     ),
     RestaurantModel(
       name: "Bazoka Fired Cheken",
@@ -33,6 +29,15 @@ class ResturentsListView extends StatelessWidget {
       image: Assets.imagesBazoka,
       time: '15',
       rate: '4.8',
+        quary: 'Burger',
+    ),
+     RestaurantModel(
+      name: "The Mixer",
+      menu: 'Juices - fruits',
+      image: Assets.imagesMixer,
+      time: '10',
+      rate: '4.9',
+      quary: 'juices',
     ),
     RestaurantModel(
       name: "B-LABAN",
@@ -40,6 +45,7 @@ class ResturentsListView extends StatelessWidget {
       image: Assets.imagesBlbn,
       time: '10',
       rate: '4.9',
+        quary: 'Ice cream',
     ),
   ];
   @override
@@ -49,6 +55,7 @@ class ResturentsListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return ResturantItem(
             restaurantModel: restaurants[index],
+         
           );
         });
   }

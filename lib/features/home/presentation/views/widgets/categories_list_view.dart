@@ -29,29 +29,30 @@ class _CategoriesListViewState extends State<CategoriesListView> {
       image: Assets.imagesJuices,
     ),
   ];
-//  final List<String> categories = ["All", "Foods", "Clothes", "Other"];
-  // Add more categories here
   int selectedIndex = 0;
   // Tracks the selected category index
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: categories.length,
-          itemBuilder: (context, index) {
-            bool isSelected =
-                selectedIndex == index; // Check if the category is selected
-            return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedIndex = index; // Update selected index on tap
-                  });
-                },
-                child: CategroyItem(
-                    categoryModel: categories[index], isSelected: isSelected));
-          }),
+    return GestureDetector(
+      
+      child: SizedBox(
+        height: 60,
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: categories.length,
+            itemBuilder: (context, index) {
+              bool isSelected =
+                  selectedIndex == index; // Check if the category is selected
+              return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = index; // Update selected index on tap
+                    });
+                  },
+                  child: CategroyItem(
+                      categoryModel: categories[index], isSelected: isSelected));
+            }),
+      ),
     );
   }
 }
