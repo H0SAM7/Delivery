@@ -1,11 +1,13 @@
 import 'package:delivery/constants.dart';
-import 'package:delivery/features/orders/views/widgets/history_view.dart';
-import 'package:delivery/features/orders/views/widgets/ongoing_view.dart';
+import 'package:delivery/core/styles/app_styles.dart';
+import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/Notifications/views/widgets/notifi_list_view.dart';
+import 'package:delivery/features/Notifications/views/widgets/notifi_view_item.dart';
 import 'package:flutter/material.dart';
 
-class OrdersView extends StatelessWidget {
-  const OrdersView({super.key});
-  static String id = 'OrdersView';
+class NotificationsView extends StatelessWidget {
+  const NotificationsView({super.key});
+  static String id = 'NotificationsView';
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -13,7 +15,7 @@ class OrdersView extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('My Orders'),
+          title: const Text('Notifications'),
           elevation: 0,
           backgroundColor: Colors.white,
           bottom: TabBar(
@@ -21,20 +23,21 @@ class OrdersView extends StatelessWidget {
             labelColor: orangeColor,
             indicatorColor: orangeColor,
             dividerColor: orangeColor,
-            tabs: <Widget>[
+            tabs: const <Widget>[
               Tab(
-                text: 'Ongoing',
+                text: 'Notifications',
               ),
               Tab(
-                text: 'History',
+                text: 'Messages',
               ),
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            OngingList(),
-            HistoryList(),
+            const Expanded(child: NotifiListView(notificationsList: [],)),
+             
+            Container(),
           ],
         ),
       ),

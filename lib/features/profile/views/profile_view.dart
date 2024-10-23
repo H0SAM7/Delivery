@@ -1,4 +1,6 @@
+import 'package:delivery/bottom_navigator_bar.dart';
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/core/widgets/custom_app_bar.dart';
 import 'package:delivery/features/profile/views/widgets/apps_section.dart';
 import 'package:delivery/features/profile/views/widgets/info_section.dart';
 import 'package:delivery/features/profile/views/widgets/item_setting.dart';
@@ -18,23 +20,29 @@ class ProfileView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Profile'),
-                  Image.asset(Assets.iconsMore),
-                ],
-              ),
+              padding: const EdgeInsets.all(8.0),
+              child: CustomAppBar(title: 'Profile',widget: Image.asset(Assets.iconsMore),onTap: (){
+                Navigator.pushReplacementNamed(context, BottomNavigator.id);
+              },),
             ),
-            UserDetailsSection(),
-            SettingContainer(
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 30.0, left: 20, right: 20),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       const Text('Profile'),
+            //       Image.asset(Assets.iconsMore),
+            //     ],
+            //   ),
+            // ),
+            const UserDetailsSection(),
+            const SettingContainer(
               child: InfoSection(),
             ),
-            SettingContainer(
+            const SettingContainer(
               child: AppSections(),
             ),
-            SettingContainer(
+            const SettingContainer(
               child: SettingsSection(),
             ),
             SettingContainer(

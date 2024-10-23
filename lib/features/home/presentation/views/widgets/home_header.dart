@@ -8,7 +8,11 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const CustomDrawer(),
+      leading: GestureDetector(
+        onTap: (){
+          Scaffold.of(context).openDrawer();
+        },
+        child: const CustomDrawer()),
       title: Text(
         'Deliver to',
         style: TextStyle(color: orangeColor),

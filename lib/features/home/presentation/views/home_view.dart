@@ -1,5 +1,6 @@
 import 'package:delivery/core/styles/app_styles.dart';
 import 'package:delivery/features/home/presentation/views/widgets/categories_list_view.dart';
+import 'package:delivery/features/home/presentation/views/widgets/custom_drawer.dart';
 import 'package:delivery/features/home/presentation/views/widgets/home_header.dart';
 import 'package:delivery/features/home/presentation/views/widgets/resutrant_list_view.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DrawerView(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

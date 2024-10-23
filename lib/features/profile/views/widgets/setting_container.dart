@@ -9,9 +9,9 @@ class SettingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xffF6F8FA),
+        color: const Color(0xffF6F8FA),
         borderRadius: BorderRadius.circular(25),
       ),
       child: child,
