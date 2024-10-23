@@ -58,6 +58,8 @@ class StripeServices {
       paymentIntentClientSecret: customerModel.clientrSecert,
       customerEphemeralKeySecret: customerModel.ephemralKey,
       customerId: customerModel.customerid,
+
+  
     ));
   }
 

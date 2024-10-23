@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class QuantityWidget extends StatefulWidget {
   const QuantityWidget({
-    super.key,
+    super.key, this.color, this.iconSize,
   });
-
+final Color? color;
+final double? iconSize;
   @override
   State<QuantityWidget> createState() => _QuantityWidgetState();
 }
@@ -24,8 +25,9 @@ class _QuantityWidgetState extends State<QuantityWidget> {
             style: AppStyles.style24(context),
           ),
         Container(
+
           decoration: BoxDecoration(
-            color: orangeColor,
+            color:widget.color?? orangeColor,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(

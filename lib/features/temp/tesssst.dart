@@ -1,49 +1,60 @@
-import 'dart:developer';
-
-import 'package:delivery/core/utils/dio_helper.dart';
-import 'package:delivery/features/home/data/models/menu_model/menu_model.dart';
-import 'package:delivery/features/home/presentation/views/widgets/product_details_item.dart';
-import 'package:delivery/features/payment/presentation/views/widgets/payment_method_list_view.dart';
+import 'package:delivery/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Tesssst extends StatelessWidget {
-  const Tesssst({super.key});
-  static String id = 'Tesssst';
+
+class testView extends StatelessWidget {
+  static String id='testView';
+  const testView({super.key, });
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-       
-          Center(
-            child: IconButton(
-              onPressed: ()async {
-               // await GetDataImpl().getMenu();
-              },
-              icon: Icon(
-                Icons.add,
-                size: 100,
+    return GestureDetector(
+      onTap: () {
+      //  Navigator.pushNamed(context, EditNoteView.id,arguments:note );
+      },
+      child: Container(
+        padding: const EdgeInsets.only(top: 24, bottom: 24, left: 24),
+        decoration: BoxDecoration(
+            color: orangeColor, borderRadius: BorderRadius.circular(16)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  'note.title',
+                  style: const TextStyle(color: Colors.black, fontSize: 26),
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0, top: 16),
+                  child: Text(
+                    'note.subtitle',
+                    style: TextStyle(
+                        color: Colors.black.withOpacity(.5), fontSize: 16),
+                  ),
+                ),
+                trailing: IconButton(
+                  onPressed: () {
+                //    note.delete();
+            //    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  },
+                  icon: const Icon(
+                    Icons.delete,
+                    size: 26,
+                    color: Colors.black,
+                  ),
+                )),
+            Padding(
+              padding: const EdgeInsets.only(right: 24.0),
+              child: Text(
+                'note.date',
+                style: TextStyle(
+                    color: Colors.black.withOpacity(.5), fontSize: 16),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
-
-// Future getMenu() async {
-//   String url =
-//       'https://api.spoonacular.com/food/menuItems/search?query=burger&number=2&apiKey=acd1078909984959bdbd10f768c72c26';
-//   List<MenuModel> menu = [];
-//   var response = await DioServices().getAllBooks(url: url, quary: '');
-//   try {
-//     for (var item in response['menuItems']) {
-//       menu.add(MenuModel.fromJson(item));
-//     }
-//     log('fetch done');
-//     return menu;
-//   } catch (e) {
-//     log('errrrrrrrrrr');
-//   }
-// }

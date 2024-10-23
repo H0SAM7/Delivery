@@ -14,6 +14,7 @@ class MenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        
         Navigator.pushNamed(context, ProductDetailsView.id, arguments: {
           'menuModel': menuModel,
           'resturantModel': restaurantModel

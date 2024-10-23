@@ -8,12 +8,13 @@ import 'package:delivery/features/home/presentation/views/product_details_view.d
 import 'package:delivery/features/orders/views/orders_view.dart';
 import 'package:delivery/features/orders/views/track_order_view.dart';
 import 'package:delivery/features/payment/presentation/views/add_new_card_view.dart';
+import 'package:delivery/features/payment/presentation/views/chose_payment_view.dart';
 import 'package:delivery/features/payment/presentation/views/payment_done_view.dart';
 import 'package:delivery/features/payment/presentation/views/pyment_view.dart';
 import 'package:delivery/features/profile/views/profile_view.dart';
 import 'package:delivery/features/profile/views/sections/add_new_address_view.dart';
 import 'package:delivery/features/profile/views/sections/address_view.dart';
-import 'package:delivery/features/profile/views/sections/cart_view.dart';
+import 'package:delivery/features/cart/views/cart_view.dart';
 import 'package:delivery/features/profile/views/sections/edit_profile_view.dart';
 import 'package:delivery/features/profile/views/sections/faqs_view.dart';
 import 'package:delivery/features/profile/views/sections/favo_view.dart';
@@ -52,8 +53,10 @@ abstract class AppRoutes {
     AddNewCard.id: (context) => const AddNewCard(),
     PaymentDoneView.id: (context) => const PaymentDoneView(),
     StripeTest.id: (context) => const StripeTest(),
-    Tesssst.id: (context) => const Tesssst(),
+    testView.id: (context) =>  testView(),
         MenuItemsView.id: (context) => const MenuItemsView(),
+                ChosePaymentView.id: (context) => const ChosePaymentView(),
+
 
   };
 }

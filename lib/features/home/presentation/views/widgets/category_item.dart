@@ -1,6 +1,11 @@
 import 'package:delivery/core/styles/app_styles.dart';
+import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/home/data/models/category_model.dart';
+import 'package:delivery/features/home/data/models/restaurant_model.dart';
+import 'package:delivery/features/home/presentation/manager/menu_cubit/menu_cubit.dart';
+import 'package:delivery/features/home/presentation/views/menu_items_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategroyItem extends StatelessWidget {
   const CategroyItem(
@@ -10,8 +15,22 @@ class CategroyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        //  Navigator.pushNamed(context, BrandDetailsView.id);
+      onTap: () async {
+        await BlocProvider.of<MenuCubit>(context)
+            .getMenu(quary: categoryModel.name);
+
+        Navigator.pushNamed(
+          context,
+          MenuItemsView.id,
+          arguments: RestaurantModel(
+            name: "Bazoka Fired Cheken",
+            menu: 'Burger -Fried Cheken - Wing - pasta',
+            image: Assets.imagesBazoka,
+            time: '15',
+            rate: '4.8',
+            quary: 'Burger',
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),

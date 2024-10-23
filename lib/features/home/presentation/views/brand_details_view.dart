@@ -1,4 +1,3 @@
-import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/home/presentation/views/widgets/brand_header.dart';
 import 'package:delivery/features/home/presentation/views/widgets/product_list_view.dart';
 import 'package:flutter/material.dart';

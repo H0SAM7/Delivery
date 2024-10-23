@@ -1,5 +1,6 @@
 import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
 import 'package:delivery/features/auth/views/widgets/custom_text_field.dart';
+import 'package:delivery/features/payment/presentation/views/chose_payment_view.dart';
 import 'package:flutter/material.dart';
 
 class PaymentBottomSheetView extends StatelessWidget {
@@ -10,27 +11,30 @@ class PaymentBottomSheetView extends StatelessWidget {
     return Padding(
       padding:
           EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-      child: const Column(
+      child:  Column(
         mainAxisSize: MainAxisSize.min, // Ensures the Column wraps its content
 
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          
+          const SizedBox(
             height: 30,
           ),
-          Text('Address'),
-          CustomTextFrom(
+          const Text('Address'),
+          const CustomTextFrom(
               label: 'Sohag - sohag 15 street',
               hint: 'Sohag - sohag 15 street'),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          Text('Total:  \$66'),
-          SizedBox(
+          const Text('Total:  \$66'),
+          const SizedBox(
             height: 20,
           ),
-          Center(child: CustomSendButton(label: 'Order Now')),
-          SizedBox(
+          Center(child: CustomSendButton(label: 'Order Now',onTap: (){
+            Navigator.pushNamed(context, ChosePaymentView.id);
+          },)),
+          const SizedBox(
             height: 30,
           ),
         ],

@@ -3,16 +3,24 @@ import 'package:delivery/features/payment/presentation/views/widgets/payment_met
 import 'package:flutter/material.dart';
 
 class PaymentMethodsListView extends StatefulWidget {
-  const PaymentMethodsListView({super.key});
-
+  const PaymentMethodsListView({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   State<PaymentMethodsListView> createState() => _PaymentMethodsListViewState();
 }
 
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> paymentMethodsItems = const [
-    Assets.iconsPaymentIcon,
-    Assets.iconsPaymentIcon,
+    Assets.imagesCash,
+    Assets.imagesVisa,
+    Assets.imagesMasterCard,
+    Assets.imagesPaypalIcon,
+  ];
+  final List<String> paymentMethodsNames = const [
+    'Cash',
+    'Visa',
+    'Mastercard',
+    'PayPal'
   ];
 
   int activeIndex = 0;
@@ -32,8 +40,11 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
                   setState(() {});
                 },
                 child: PaymentMethodItem(
+                  index: index,
                   isActive: activeIndex == index,
                   image: paymentMethodsItems[index],
+                  title: paymentMethodsNames[index],
+                  onTap: widget.onTap,
                 ),
               ),
             );

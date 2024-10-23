@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/cart/manager/cart_cubit/cart_cubit.dart';
 import 'package:delivery/features/payment/presentation/views/pyment_view.dart';
-import 'package:delivery/features/profile/views/sections/cart_view.dart';
+import 'package:delivery/features/cart/views/cart_view.dart';
 import 'package:delivery/features/profile/views/widgets/item_setting.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppSections extends StatelessWidget {
   const AppSections({super.key});
@@ -14,7 +18,9 @@ class AppSections extends StatelessWidget {
         ItemSetting(
           leading: Image.asset(Assets.iconsCartIcon),
           title: 'Cart',
-          onTap: () {
+          onTap: () async{
+            await BlocProvider.of<CartCubit>(context).fetchAllItems();
+         
             Navigator.pushNamed(context, CartView.id);
           },
         ),

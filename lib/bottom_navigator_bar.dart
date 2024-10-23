@@ -43,11 +43,11 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              Assets.iconsSearch,
+              Assets.iconsCar,
               color: orangeColor,
               height: 20,
             ),
-            label: 'Search',
+            label: 'My Order',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(Assets.iconsPlusIcon),
@@ -59,7 +59,8 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             //   color:  orangeColor,
             //   height: 20,
             // ),
-            icon: Icon(
+            icon:
+             Icon(
               Icons.shopping_cart_checkout,
               color: orangeColor,
             ),

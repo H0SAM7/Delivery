@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   static const String iconsAddress = "assets/icons/address.png";
 
   static const String iconsBack = "assets/icons/Back.png";
@@ -130,6 +130,8 @@ class Assets {
 
   static const String imagesBurger = "assets/images/burger.png";
 
+  static const String imagesCash = "assets/images/Cash.png";
+
   static const String imagesFire = "assets/images/fire.png";
 
   static const String imagesJuices = "assets/images/Juices.png";
@@ -138,11 +140,18 @@ class Assets {
 
   static const String imagesMandoz = "assets/images/mandoz.jpg";
 
+  static const String imagesMasterCard = "assets/images/masterCard.png";
+
   static const String imagesMixer = "assets/images/mixer.jpg";
+
+  static const String imagesPaypalIcon = "assets/images/paypal-icon.png";
 
   static const String imagesPizza = "assets/images/pizza.png";
 
   static const String imagesTstContainer = "assets/images/tstContainer.png";
 
+  static const String imagesVisa = "assets/images/Visa.png";
+
   static const String imagesZacks = "assets/images/zacks.png";
 }
+

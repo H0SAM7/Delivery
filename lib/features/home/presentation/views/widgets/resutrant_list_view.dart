@@ -37,7 +37,7 @@ class ResturentsListView extends StatelessWidget {
       image: Assets.imagesMixer,
       time: '10',
       rate: '4.9',
-      quary: 'juices',
+      quary: 'soda',
     ),
     RestaurantModel(
       name: "B-LABAN",
