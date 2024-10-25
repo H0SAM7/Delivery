@@ -18,9 +18,11 @@ class SendNotifactionsSendView extends StatefulWidget {
   const SendNotifactionsSendView({super.key});
   static String id = 'SendNotifactionsSendView';
   @override
+  // ignore: library_private_types_in_public_api
   _sendNotifactionsSendViewState createState() => _sendNotifactionsSendViewState();
 }
 
+// ignore: camel_case_types
 class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController subTitlecontroller = TextEditingController();
@@ -29,7 +31,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
 
   getToken() async {
     var mytoken = await FirebaseMessaging.instance.getToken();
-    log('My token================  ${mytoken.toString()}');
+    log('My token ================  ${mytoken.toString()}');
   }
 
   @override

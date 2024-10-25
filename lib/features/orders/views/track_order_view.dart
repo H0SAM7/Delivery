@@ -9,10 +9,10 @@ class TrackOrderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffD0D9E1),
+      backgroundColor: const Color(0xffD0D9E1),
       body: Column(
         children: [
-          CustomAppBar(title: 'Tracking Order'),
+          const CustomAppBar(title: 'Tracking Order'),
           Expanded(
               flex: 4,
               child: Image.asset(
@@ -20,7 +20,7 @@ class TrackOrderView extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               )),
           const Spacer(),
-          Expanded(flex: 4, child: DeliveryTrackingSheet()),
+          const Expanded(flex: 4, child: DeliveryTrackingSheet()),
         ],
       ),
     );
@@ -137,11 +137,11 @@ class KabtinContact extends StatelessWidget {
           'https://via.placeholder.com/150', // Replace with actual image
         ),
       ),
-      title: Text(
+      title: const Text(
         'Bashar',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
       ),
-      subtitle: Text('Courier'),
+      subtitle: const Text('Courier'),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -150,10 +150,10 @@ class KabtinContact extends StatelessWidget {
             onPressed: () {},
             color: Colors.orange,
             iconSize: 30,
-            padding: EdgeInsets.all(12),
-            constraints: BoxConstraints(),
+            padding: const EdgeInsets.all(12),
+            constraints: const BoxConstraints(),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           IconButton(
             icon: Icon(
               Icons.messenger,
@@ -162,8 +162,8 @@ class KabtinContact extends StatelessWidget {
             onPressed: () {},
             color: Colors.orangeAccent,
             iconSize: 30,
-            padding: EdgeInsets.all(12),
-            constraints: BoxConstraints(),
+            padding: const EdgeInsets.all(12),
+            constraints: const BoxConstraints(),
           ),
         ],
       ),
@@ -191,7 +191,7 @@ class OrderStep extends StatelessWidget {
     return Row(
       children: [
         Icon(icon, color: iconColor, size: 24),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Text(
           text,
           style: TextStyle(

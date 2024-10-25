@@ -8,14 +8,14 @@ class ProductListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           childAspectRatio: 5 / 7,
         ),
         itemCount: 4,
         itemBuilder: (context, ind) {
-          return ProductDetails(
+          return const ProductDetails(
             title: 'Burger Bistro',
             price: '\$40',
             image: Assets.imagesBk,

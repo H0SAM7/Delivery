@@ -4,6 +4,7 @@ import 'package:delivery/features/Notifications/views/notifi_view.dart';
 import 'package:delivery/features/Notifications/views/notifications_view.dart';
 import 'package:delivery/features/auth/views/login_view.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
+import 'package:delivery/features/chat/views/chat_view.dart';
 import 'package:delivery/features/home/presentation/views/brand_details_view.dart';
 import 'package:delivery/features/home/presentation/views/home_view.dart';
 import 'package:delivery/features/home/presentation/views/menu_items_view.dart';
@@ -30,7 +31,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppRoutes {
   //     BottomNavigator
-  static String? initialRoute = NotifiView.id;
+  static String? initialRoute = ChatView.id;
   static Map<String, Widget Function(BuildContext)> routes = {
     BottomNavigator.id: (context) => const BottomNavigator(),
     SplashView.id: (context) => const SplashView(),
@@ -60,6 +61,8 @@ abstract class AppRoutes {
     ChosePaymentView.id: (context) => const ChosePaymentView(),
     NotifiView.id: (context) => const NotifiView(),
         SendNotifactionsSendView.id: (context) => const SendNotifactionsSendView(),
+                ChatView.id: (context) => const ChatView(),
+
 
     
   };
