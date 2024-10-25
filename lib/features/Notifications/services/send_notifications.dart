@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:delivery/constants.dart';
 import 'package:http/http.dart' as http;
 
 class NotificationsServices {
@@ -20,7 +21,7 @@ class NotificationsServices {
 
     var body = {
       "message": {
-        "topic": "all",
+        "topic": notifiGroup,
         "notification": {"title": title, "body": message},
         "data": {"story_id": "story_12345"}
       }
@@ -34,9 +35,9 @@ class NotificationsServices {
     final resBody = await res.stream.bytesToString();
 
     if (res.statusCode >= 200 && res.statusCode < 300) {
-      log(resBody);
+      log('resBody=========$resBody');
     } else {
-      log(res.reasonPhrase ?? '');
+      log('res.reasonPhrase=========${res.reasonPhrase}' ?? '');
     }
   }
 }

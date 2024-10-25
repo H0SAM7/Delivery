@@ -2,6 +2,8 @@
 class Assets {
   Assets._();
   
+  static const String filesAdminSdk = "assets/files/admin-sdk.json";
+
   static const String iconsAddress = "assets/icons/address.png";
 
   static const String iconsBack = "assets/icons/Back.png";
@@ -143,6 +145,8 @@ class Assets {
   static const String imagesMasterCard = "assets/images/masterCard.png";
 
   static const String imagesMixer = "assets/images/mixer.jpg";
+
+  static const String imagesNoNotifi = "assets/images/no_notifi.png";
 
   static const String imagesPaypalIcon = "assets/images/paypal-icon.png";
 

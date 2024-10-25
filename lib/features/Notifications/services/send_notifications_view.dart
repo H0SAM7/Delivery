@@ -1,148 +1,150 @@
-// import 'dart:convert';
-// import 'dart:developer';
-// import 'package:e_learing/constants.dart';
-// import 'package:e_learing/core/widgets/custom_alert.dart';
-// import 'package:e_learing/core/widgets/custom_button.dart';
-// import 'package:e_learing/features/Notifications/services/send_notifications.dart';
-// import 'package:e_learing/features/auth/presentation/views/widgets/custom_text_field.dart';
-// import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart' show rootBundle;
-// import 'package:googleapis_auth/auth_io.dart';
-// import 'package:http/http.dart' as http;
-// import 'package:rflutter_alert/rflutter_alert.dart';
+import 'dart:convert';
+import 'dart:developer';
 
-// class NotifactionsSendView extends StatefulWidget {
-//   const NotifactionsSendView({super.key});
-//   static String id = 'NotifactionsSendView';
-//   @override
-//   _NotifactionsSendViewState createState() => _NotifactionsSendViewState();
-// }
+import 'package:delivery/constants.dart';
+import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/core/widgets/custom_alert.dart';
+import 'package:delivery/features/Notifications/services/send_notifications.dart';
+import 'package:delivery/features/auth/views/widgets/custom_send_button.dart';
+import 'package:delivery/features/auth/views/widgets/custom_text_field.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:googleapis_auth/auth_io.dart';
+import 'package:http/http.dart' as http;
+import 'package:rflutter_alert/rflutter_alert.dart';
 
-// class _NotifactionsSendViewState extends State<NotifactionsSendView> {
-//   final TextEditingController titleController = TextEditingController();
-//   final TextEditingController subTitlecontroller = TextEditingController();
+class SendNotifactionsSendView extends StatefulWidget {
+  const SendNotifactionsSendView({super.key});
+  static String id = 'SendNotifactionsSendView';
+  @override
+  _sendNotifactionsSendViewState createState() => _sendNotifactionsSendViewState();
+}
 
-//   String accessToken = '';
+class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController subTitlecontroller = TextEditingController();
 
-//   getToken() async {
-//     var mytoken = await FirebaseMessaging.instance.getToken();
-//     log(mytoken.toString());
-//   }
+  String accessToken = '';
 
-//   @override
-//   void initState() {
-//     getToken();
-//     super.initState();
-//     getAccessToken();
-//   }
+  getToken() async {
+    var mytoken = await FirebaseMessaging.instance.getToken();
+    log('My token================  ${mytoken.toString()}');
+  }
 
-//   Future<void> getAccessToken() async {
-//     try {
-//       final serviceAccountJson = await rootBundle.loadString(
-//           'assets/files/educationapp-842af-firebase-adminsdk-9uxdl-b965004fc3.json');
+  @override
+  void initState() {
+    getToken();
+    super.initState();
+    getAccessToken();
+  }
 
-//       final accountCredentials = ServiceAccountCredentials.fromJson(
-//         json.decode(serviceAccountJson),
-//       );
+  Future<void> getAccessToken() async {
+    try {
+      final serviceAccountJson = await rootBundle.loadString(
+         Assets.filesAdminSdk);
 
-//       const scopes = ['https://www.googleapis.com/auth/firebase.messaging'];
+      final accountCredentials = ServiceAccountCredentials.fromJson(
+        json.decode(serviceAccountJson),
+      );
 
-//       final client = http.Client();
-//       try {
-//         final accessCredentials =
-//             await obtainAccessCredentialsViaServiceAccount(
-//           accountCredentials,
-//           scopes,
-//           client,
-//         );
+      const scopes = ['https://www.googleapis.com/auth/firebase.messaging'];
 
-//         setState(() {
-//           accessToken = accessCredentials.accessToken.data;
-//         });
+      final client = http.Client();
+      try {
+        final accessCredentials =
+            await obtainAccessCredentialsViaServiceAccount(
+          accountCredentials,
+          scopes,
+          client,
+        );
 
-//         log('Access Token: $accessToken');
-//       } catch (e) {
-//         log('Error obtaining access token: $e');
-//       } finally {
-//         client.close();
-//       }
-//     } catch (e) {
-//       log('Error loading service account JSON: $e');
-//     }
-//   }
+        setState(() {
+          accessToken = accessCredentials.accessToken.data;
+        });
 
-//   @override
-//   void dispose() {
-//     titleController.dispose();
-//     subTitlecontroller.dispose();
-//     super.dispose();
-//   }
+        log('Access Token: $accessToken');
+      } catch (e) {
+        log('Error obtaining access token: $e');
+      } finally {
+        client.close();
+      }
+    } catch (e) {
+      log('Error loading service account JSON: $e');
+    }
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Send Notification'),
-//         elevation: 0,
-//         backgroundColor: mainColor,
-//       ),
-//       body: Column(
-//         children: [
-//           CustomTextFrom(
-//             hint: '',
-//             label: "title",
-//             onChanged: (value) {
-//               titleController.text = value;
-//             },
-//           ),
-//           CustomTextFrom(
-//             hint: '',
-//             label: "subtitle",
-//             onChanged: (value) {
-//               subTitlecontroller.text = value;
-//             },
-//           ),
-//           CustomButton(
-//             label: 'Send',
-//             color: mainColor,
-//             txtColor: Colors.white,
-//             onTap: () async {
-//               try {
-//                 await NotificationsServices().sendNotification(
-//                   titleController.text,
-//                   subTitlecontroller.text,
-//                   accessToken,
-//                 );
-//                 showCustomAlert(
-//                     context: context,
-//                     type: AlertType.success,
-//                     title: '',
-//                     description: 'Send done',
-//                     onPressed: () {
-//                       Navigator.pop(context);
-//                     },
-//                     actionTitle: 'Ok');
+  @override
+  void dispose() {
+    titleController.dispose();
+    subTitlecontroller.dispose();
+    super.dispose();
+  }
 
-//                 log('send message done');
-//                 Navigator.pop(context);
-//               } catch (e) {
-//                 log('send message err:$e');
-//               }
-//             },
-//           ),
-//           // IconButton(
-//           //     onPressed: () async {
-//           //       await NotificationsServices().sendNotification(
-//           //           'welcome', 'can i help you?', accessToken);
-//           //       log('send message done');
-//           //     },
-//           //     icon: Icon(
-//           //       Icons.import_contacts,
-//           //       size: 150,
-//           //     )),
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Send Notification'),
+        elevation: 0,
+        backgroundColor: orangeColor,
+      ),
+      body: Column(
+        children: [
+          CustomTextFrom(
+            hint: '',
+            label: "title",
+            onChanged: (value) {
+              titleController.text = value;
+            },
+          ),
+          CustomTextFrom(
+            hint: '',
+            label: "subtitle",
+            onChanged: (value) {
+              subTitlecontroller.text = value;
+            },
+          ),
+          CustomSendButton(
+            label: 'Send',
+            color: orangeColor,
+            txtcolor: Colors.white,
+            onTap: () async {
+              try {
+                await NotificationsServices().sendNotification(
+                  titleController.text,
+                  subTitlecontroller.text,
+                  accessToken,
+                );
+                showCustomAlert(
+                    context: context,
+                    type: AlertType.success,
+                    title: '',
+                    description: 'Send done',
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    actionTitle: 'Ok');
+
+                log('send message done');
+                Navigator.pop(context);
+              } catch (e) {
+                log('send message err:$e');
+              }
+            },
+          ),
+          // IconButton(
+          //     onPressed: () async {
+          //       await NotificationsServices().sendNotification(
+          //           'welcome', 'can i help you?', accessToken);
+          //       log('send message done');
+          //     },
+          //     icon: Icon(
+          //       Icons.import_contacts,
+          //       size: 150,
+          //     )),
+        ],
+      ),
+    );
+  }
+}

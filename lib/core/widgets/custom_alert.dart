@@ -20,6 +20,9 @@ void showCustomAlert({
     desc: description,
     onWillPopActive: true,
     closeFunction: closeFunction,
+    style: const AlertStyle(
+      titleStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)
+    ),
     buttons: [
       DialogButton(
         

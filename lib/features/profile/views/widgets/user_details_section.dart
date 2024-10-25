@@ -6,6 +6,7 @@ class UserDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: orangeColor,

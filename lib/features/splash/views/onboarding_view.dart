@@ -1,5 +1,9 @@
+import 'dart:developer';
+
+import 'package:delivery/bottom_navigator_bar.dart';
 import 'package:delivery/core/utils/assets.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -91,11 +95,24 @@ class _OnboardingViewState extends State<OnboardingView> {
             ),
             SizedBox(height: 10),
             TextButton(
-              onPressed: () {
+              onPressed: () async {
                 // _pageController.jumpToPage(2);
-                Navigator.pushNamed(context, RegisterView.id);
+                FirebaseAuth.instance.authStateChanges().listen((User? user) {
+                  if (user == null) {
+                    Navigator.pushNamed(context, RegisterView.id);
+                    log('User is currently signed out!');
+                  } else {
+                    if (user.emailVerified) {
+                      Navigator.pushReplacementNamed(
+                          context, BottomNavigator.id);
+                      log('User is signed in!');
+                    } else {
+                      Navigator.pushReplacementNamed(context, RegisterView.id);
+                    }
+                  }
+                });
               },
-              child: Text('Skip'),
+              child: const Text('Skip'),
             ),
           ],
         ),

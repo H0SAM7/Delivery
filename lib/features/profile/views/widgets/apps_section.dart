@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/features/Notifications/views/notifi_view.dart';
 import 'package:delivery/features/cart/manager/cart_cubit/cart_cubit.dart';
 import 'package:delivery/features/payment/presentation/views/pyment_view.dart';
 import 'package:delivery/features/cart/views/cart_view.dart';
@@ -29,6 +30,10 @@ class AppSections extends StatelessWidget {
           title: 'Favourits',
         ),
         ItemSetting(
+          onTap: (){
+                        Navigator.pushNamed(context, NotifiView.id);
+
+          },
           leading: Image.asset(Assets.iconsNotifiIcon),
           title: 'Notifications',
         ),

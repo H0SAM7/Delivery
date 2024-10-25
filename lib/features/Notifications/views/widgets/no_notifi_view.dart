@@ -1,28 +1,28 @@
-// import 'package:e_learing/core/utils/app_images.dart';
-// import 'package:flutter/material.dart';
+import 'package:delivery/core/utils/assets.dart';
+import 'package:flutter/material.dart';
 
-// class NoNoitifiView extends StatelessWidget {
-//   const NoNoitifiView({
-//     super.key,
-//   });
+class NoNoitifiView extends StatelessWidget {
+  const NoNoitifiView({
+    super.key,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//        mainAxisAlignment: MainAxisAlignment.center,
-//       crossAxisAlignment: CrossAxisAlignment.center,
-//       children: [
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
   
-//         Align(
+        Align(
           
-//           child: Image.asset(Assets.imagesNotifications)),
-//         SizedBox(height: 20),
-//         Text(
-//           'No notification, yet!',
-//           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-//         ),
-//              SizedBox(height: 10),
-//       ],
-//     );
-//   }
-// }
+          child: Image.asset(Assets.imagesNoNotifi)),
+        const SizedBox(height: 20),
+        const Text(
+          'No notification, yet!',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+             const SizedBox(height: 10),
+      ],
+    );
+  }
+}

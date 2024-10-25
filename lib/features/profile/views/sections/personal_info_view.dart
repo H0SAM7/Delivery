@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:delivery/constants.dart';
 import 'package:delivery/core/utils/assets.dart';
+import 'package:delivery/core/utils/shared_pref.dart';
 import 'package:delivery/core/widgets/custom_app_bar.dart';
 import 'package:delivery/features/profile/views/sections/edit_profile_view.dart';
 import 'package:delivery/features/profile/views/widgets/custom_list_tile.dart';
 import 'package:delivery/features/profile/views/widgets/setting_container.dart';
 import 'package:delivery/features/profile/views/widgets/user_details_section.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfoView extends StatelessWidget {
@@ -39,10 +43,48 @@ class PersonalInfoView extends StatelessWidget {
   }
 }
 
-class PersonalInfoSection extends StatelessWidget {
+class PersonalInfoSection extends StatefulWidget {
   const PersonalInfoSection({
     super.key,
   });
+
+  @override
+  State<PersonalInfoSection> createState() => _PersonalInfoSectionState();
+}
+
+class _PersonalInfoSectionState extends State<PersonalInfoSection> {
+  Map<String, String>? userInfo;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserInfo();
+  }
+
+  Future<void> _loadUserInfo() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    Map<String, String> defaultValues = {
+      'username': 'User Name', // Default full name
+      'email': 'User@gmail.com', // Default email
+    };
+
+    if (user != null) {
+      String? jsonString =await SharedPreference().getString(user.email!);
+
+      if (jsonString != null) {
+        Map<String, dynamic> storedUserInfo = jsonDecode(jsonString);
+
+        userInfo =
+            storedUserInfo.map((key, value) => MapEntry(key, value as String));
+      } else {
+        userInfo = defaultValues; 
+      }
+    } else {
+      userInfo = defaultValues; 
+    }
+
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +92,14 @@ class PersonalInfoSection extends StatelessWidget {
       children: [
         CustomListTile(
           title: 'Full Name',
-          subtitle: 'Hosam Adel',
+          subtitle: userInfo!['username']!,
           leading: Image.asset(
             Assets.iconsProfile,
           ),
         ),
         CustomListTile(
           title: 'Email',
-          subtitle: 'Hosam@gmail.com',
+          subtitle: userInfo!['email']!,
           leading: Image.asset(
             Assets.iconsEmailIcon,
           ),

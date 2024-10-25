@@ -1,152 +1,153 @@
-// import 'dart:async';
-// import 'dart:convert';
-// import 'dart:developer';
-// import 'package:e_learing/constants.dart';
-// import 'package:e_learing/core/utils/app_styles.dart';
-// import 'package:e_learing/features/Notifications/views/widgets/no_notifi_view.dart';
-// import 'package:e_learing/features/Notifications/views/widgets/notifi_list_view.dart';
-// import 'package:firebase_messaging/firebase_messaging.dart';
-// import 'package:flutter/material.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'dart:developer';
+import 'package:delivery/constants.dart';
+import 'package:delivery/core/styles/app_styles.dart';
+import 'package:delivery/features/Notifications/views/widgets/no_notifi_view.dart';
+import 'package:delivery/features/Notifications/views/widgets/notifi_list_view.dart';
 
-// class NotifiView extends StatefulWidget {
-//   const NotifiView({super.key});
-//   static String id = 'NotifiView';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-//   @override
-//   State<NotifiView> createState() => _NotifiViewState();
-// }
+class NotifiView extends StatefulWidget {
+  const NotifiView({super.key});
+  static String id = 'NotifiView';
 
-// class _NotifiViewState extends State<NotifiView> {
-//   String? notificationTitle;
-//   String? notificationBody;
-//   List<Map<String, String>> _notifications = [];
-//   Timer? _clearNotificationTimer;
+  @override
+  State<NotifiView> createState() => _NotifiViewState();
+}
 
-//   Future<void> storeNotifications(
-//       List<Map<String, String>> notifications) async {
-//     final prefs = await SharedPreferences.getInstance();
-//     List<String> notificationsAsString =
-//         notifications.map((notification) => jsonEncode(notification)).toList();
-//     await prefs.setStringList('notifications', notificationsAsString);
-//   }
+class _NotifiViewState extends State<NotifiView> {
+  String? notificationTitle;
+  String? notificationBody;
+  List<Map<String, String>> _notifications = [];
+  Timer? _clearNotificationTimer;
 
-//   Future<void> loadNotifications() async {
-//     final prefs = await SharedPreferences.getInstance();
-//     List<String>? storedNotifications = prefs.getStringList('notifications');
+  Future<void> storeNotifications(
+      List<Map<String, String>> notifications) async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String> notificationsAsString =
+        notifications.map((notification) => jsonEncode(notification)).toList();
+    await prefs.setStringList('notifications', notificationsAsString);
+  }
 
-//     if (storedNotifications != null) {
-//       setState(() {
-//         _notifications = storedNotifications
-//             .map((notificationString) =>
-//                 Map<String, String>.from(jsonDecode(notificationString)))
-//             .toList();
-//       });
-//     }
-//   }
+  Future<void> loadNotifications() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String>? storedNotifications = prefs.getStringList('notifications');
 
-//   void startClearNotificationTimer() {
-//     _clearNotificationTimer?.cancel(); // Cancel any previous timer
-//     _clearNotificationTimer = Timer(Duration(days: 7), () async {
-//       final prefs = await SharedPreferences.getInstance();
-//       await prefs.remove('notifications');
-//       setState(() {
-//         _notifications.clear();
-//       });
-//     });
-//   }
+    if (storedNotifications != null) {
+      setState(() {
+        _notifications = storedNotifications
+            .map((notificationString) =>
+                Map<String, String>.from(jsonDecode(notificationString)))
+            .toList();
+      });
+    }
+  }
 
-//   @override
-//   void dispose() {
-//     _clearNotificationTimer?.cancel();
-//     super.dispose();
-//   }
+  void startClearNotificationTimer() {
+    _clearNotificationTimer?.cancel(); // Cancel any previous timer
+    _clearNotificationTimer = Timer(const Duration(days: 7), () async {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove('notifications');
+      setState(() {
+        _notifications.clear();
+      });
+    });
+  }
 
-//   @override
-//   void initState() {
-//     super.initState();
-//     loadNotifications();
+  @override
+  void dispose() {
+    _clearNotificationTimer?.cancel();
+    super.dispose();
+  }
 
-//     //getToken();
-//     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-//       log('Got a message whilst in the foreground!');
-//       log('Message data: ${message.data}');
+  @override
+  void initState() {
+    super.initState();
+    loadNotifications();
 
-//       // Check if the message contains a notification
-//       if (message.notification != null) {
-//         log('Message also contained a notification: ${message.notification!.body}');
-//         String title = message.notification!.title ?? "No Title";
-//         String body = message.notification!.body ?? "No Body";
+    //getToken();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      log('Got a message whilst in the foreground!');
+      log('Message data: ${message.data}');
 
-//         setState(() {
-//           // Add the new notification to the list
-//           _notifications.add({'title': title, 'body': body});
-//         });
-//         storeNotifications(_notifications);
+      // Check if the message contains a notification
+      if (message.notification != null) {
+        log('Message also contained a notification: ${message.notification!.body}');
+        String title = message.notification!.title ?? "No Title";
+        String body = message.notification!.body ?? "No Body";
 
-//         // Clear notifications after a temporary period
-//         startClearNotificationTimer();
-//       }
-//     });
-//   }
+        setState(() {
+          // Add the new notification to the list
+          _notifications.add({'title': title, 'body': body});
+        });
+        storeNotifications(_notifications);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       appBar: AppBar(
-//         backgroundColor: mainColor,
-//         elevation: 0,
-//         bottom: PreferredSize(
-//           preferredSize: Size.fromHeight(10.0),
-//           child: Divider(), 
-//         ),
-//         title: Text(
-//           'Notifications',
-//           style: AppStyles.poppinsStylebold20,
-//         ),
-//         actions: [
-//           IconButton(
-//             icon: Icon(Icons.settings),
-//             onPressed: () {
-//               showMenu(
-//                 context: context,
-//                 position: RelativeRect.fromLTRB(100, 100, 0, 0),
-//                 items: [
-//                   PopupMenuItem(
-//                     child: TextButton.icon(
-//                         label: Text('Clear All'),
-//                         onPressed: () async {
-//                           final prefs = await SharedPreferences.getInstance();
-//                           await prefs.remove('notifications');
-//                           setState(() {
-//                             _notifications.clear();
-//                           });
-//                         },
-//                         icon: Icon(Icons.logout)),
-//                   ),
+        // Clear notifications after a temporary period
+        startClearNotificationTimer();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: orangeColor,
+        elevation: 0,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(10.0),
+          child: Divider(), 
+        ),
+        title: const Text(
+          'Notifications',
+          style: AppStyles.styleBold18,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(100, 100, 0, 0),
+                items: [
+                  PopupMenuItem(
+                    child: TextButton.icon(
+                        label: const Text('Clear All'),
+                        onPressed: () async {
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.remove('notifications');
+                          setState(() {
+                            _notifications.clear();
+                          });
+                        },
+                        icon: const Icon(Icons.logout)),
+                  ),
                  
-//                 ],
-//               );
-//             },
-//           ),
-//         ],
-//       ),
-//       body: Center(
-//         child: (_notifications.isNotEmpty)
-//             ? Column(
-//                 mainAxisAlignment: MainAxisAlignment.start,
-//                 children: [
-//                   Divider(),
-//                   Expanded(
-//                     child: NotifiListView(
-//                       notificationsList: _notifications,
-//                     ),
-//                   ),
-//                 ],
-//               )
-//             : NoNoitifiView(),
-//       ),
-//     );
-//   }
-// }
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: (_notifications.isNotEmpty)
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Divider(),
+                  Expanded(
+                    child: NotifiListView(
+                      notificationsList: _notifications,
+                    ),
+                  ),
+                ],
+              )
+            : const NoNoitifiView(),
+      ),
+    );
+  }
+}

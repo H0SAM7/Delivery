@@ -1,3 +1,4 @@
+import 'package:delivery/constants.dart';
 import 'package:delivery/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class GoogleButton extends StatelessWidget {
         height: 50,
         width: 300,
         decoration: BoxDecoration(
-          //  border: Border.all(width: .2,color: newColoR2),
+          border: Border.all(width: .7,color: orangeColor),
           borderRadius: BorderRadius.circular(10),
           //color: orangeColor,
         ),
@@ -29,10 +30,10 @@ class GoogleButton extends StatelessWidget {
                 width: 50,
                 height: 40,
               ),
-              Text(
+              const Text(
                 textAlign: TextAlign.center,
-                'sign_with_google',
-                style: const TextStyle(
+                'Continue with Google',
+                style: TextStyle(
                   // color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
