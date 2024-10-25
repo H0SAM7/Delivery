@@ -1,5 +1,6 @@
 import 'package:delivery/bottom_navigator_bar.dart';
 import 'package:delivery/features/Notifications/services/send_notifications_view.dart';
+import 'package:delivery/features/Notifications/views/notifi_view.dart';
 import 'package:delivery/features/Notifications/views/notifications_view.dart';
 import 'package:delivery/features/auth/views/login_view.dart';
 import 'package:delivery/features/auth/views/register_view.dart';
@@ -20,7 +21,6 @@ import 'package:delivery/features/cart/views/cart_view.dart';
 import 'package:delivery/features/profile/views/sections/edit_profile_view.dart';
 import 'package:delivery/features/profile/views/sections/faqs_view.dart';
 import 'package:delivery/features/profile/views/sections/favo_view.dart';
-import 'package:delivery/features/profile/views/sections/notifi_view.dart';
 import 'package:delivery/features/profile/views/sections/personal_info_view.dart';
 import 'package:delivery/features/splash/views/onboarding_view.dart';
 import 'package:delivery/features/splash/views/splash_view.dart';
@@ -30,7 +30,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppRoutes {
   //     BottomNavigator
-  static String? initialRoute = BottomNavigator.id;
+  static String? initialRoute = NotifiView.id;
   static Map<String, Widget Function(BuildContext)> routes = {
     BottomNavigator.id: (context) => const BottomNavigator(),
     SplashView.id: (context) => const SplashView(),

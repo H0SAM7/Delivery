@@ -13,8 +13,8 @@ class NotifiListView extends StatelessWidget {
         itemBuilder: (context, ind) {
           final notification = notificationsList[ind];
           return NotifiItemView(
-            title:notification['notification'] ,
-            subtitle: notification['notification'],
+            title:notification['title'] !,
+            subtitle: notification['body']!,
              );
         });
   }

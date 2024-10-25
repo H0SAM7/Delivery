@@ -22,7 +22,7 @@ class CartView extends StatelessWidget {
           CustomSendButton(
             label: 'Place Order',
             onTap: () async {
-              await BlocProvider.of<CartCubit>(context).items.isNotEmpty
+              BlocProvider.of<CartCubit>(context).items.isNotEmpty
                   ? showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
